@@ -1,0 +1,47 @@
+alias: "Imuri: Koti tyhjä imuroi"
+description: ""
+triggers:
+  - entity_id: zone.home
+    to: "0"
+    trigger: state
+conditions:
+  - condition: state
+    entity_id: input_boolean.imuriautomaatio_on_off
+    state: "on"
+  - condition: state
+    entity_id: input_boolean.cleaned_today
+    state: "off"
+  - condition: state
+    entity_id: binary_sensor.hermanni_bin_full
+    state: "off"
+  - condition: time
+    after: "08:00:00"
+    before: "21:30:00"
+actions:
+  - data:
+      language: fi-GB
+      text: >-
+        Olette 2 robotti-imuria. Kertokaa hauskalla tai vitsikkäällä tavalla,
+        että aloititte imuroinnin. Pidä ilmoitus lyhyenä.
+      agent_id: conversation.chatgpt_hermanni
+    response_variable: chatgpt_hermanni_aloitus
+    enabled: true
+    action: conversation.process
+  - data:
+      title: Imurit
+      message: "{{ chatgpt_hermanni_aloitus.response.speech.plain.speech }}"
+    action: notify.mobile_puhelin_1
+  - data: {}
+    action: vacuum.start
+    enabled: true
+    target:
+      entity_id:
+        - vacuum.hermanni
+      device_id: xxxx
+  - action: notify.mobile_app_puhelin_2
+    data:
+      message: "{{ chatgpt_hermanni_aloitus.response.speech.plain.speech }}"
+      title: Imurit
+  - entity_id: input_boolean.cleaned_today
+    action: input_boolean.turn_on
+mode: single
