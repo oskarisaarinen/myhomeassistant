@@ -1,5 +1,4 @@
 ```mermaid
-%% File: diagrams/system_overview.mmd
 %% Home Assistant Smart Home System Overview
 
 graph TD
@@ -12,12 +11,12 @@ graph TD
 
     %% Services
     MQTT[MQTT Broker]:::service
-    AdBlock[Pi-hole / AdBlock]:::service
+    AdBlock[AdGuard]:::service
 
     %% Devices
-    ZigbeeDevices["Zigbee Devices\n(Sensors, Switches, Lights)"]:::device
-    WifiDevices["Wi-Fi Devices\n(Smart Plugs, Lights)"]:::device
-    RobotVacuum["Robot Vacuum Cleaner"]:::device
+    ZigbeeDevices["Zigbee Devices\n(Sensors, Lights)"]:::device
+    WifiDevices["Wi-Fi Devices\n(Smart Plugs, Lights, Shelly switches)"]:::device
+    RobotVacuum["Robot Vacuum Cleaners"]:::device
     SmartLocks["Smart Locks"]:::device
     Cameras["Cameras & Motion Sensors"]:::device
 
