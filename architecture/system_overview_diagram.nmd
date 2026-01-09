@@ -1,3 +1,4 @@
+```mermaid
 graph TD
     %% Keskus
     HA[Home Assistant VM]:::vm
