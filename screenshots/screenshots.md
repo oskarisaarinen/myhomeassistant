@@ -13,7 +13,7 @@
 ![Garage](homeassistant_garage.PNG)
 
 ## Addons
-![Addons](home_assistant_addons.PNG)
+![Addons](home_assistant_addons.png)
 
 ## Integrations
-![Addons](home_assistant_integrations.PNG)
+![Addons](home_assistant_integrations.png)
