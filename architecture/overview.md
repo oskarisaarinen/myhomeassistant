@@ -30,7 +30,7 @@ Key design principles:
 - **MQTT**: primary messaging protocol for devices
 - **Zigbee**: for sensors, switches, lights
 - **Wi-Fi**: for devices that do not support Zigbee
-- **REST APIs**: for integration with cloud or local services when required
+- **REST APIs**: for integration with cloud services when required
 
 ### Core Integrations & Services
 - **Heating & Climate Control:** Smart thermostat automations
