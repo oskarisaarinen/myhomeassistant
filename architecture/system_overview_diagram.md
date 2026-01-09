@@ -1,4 +1,3 @@
-```mermaid
 %% File: diagrams/system_overview.mmd
 %% Home Assistant Smart Home System Overview
 
@@ -15,14 +14,14 @@ graph TD
     AdBlock[Pi-hole / AdBlock]:::service
 
     %% Devices
-    ZigbeeDevices[Zigbee Devices<br>(Sensors, Switches, Lights)]:::device
-    WifiDevices[Wi-Fi Devices<br>(Smart Plugs, Lights)]:::device
-    RobotVacuum[Robot Vacuum Cleaner]:::device
-    SmartLocks[Smart Locks]:::device
-    Cameras[Cameras & Motion Sensors]:::device
+    ZigbeeDevices["Zigbee Devices\n(Sensors, Switches, Lights)"]:::device
+    WifiDevices["Wi-Fi Devices\n(Smart Plugs, Lights)"]:::device
+    RobotVacuum["Robot Vacuum Cleaner"]:::device
+    SmartLocks["Smart Locks"]:::device
+    Cameras["Cameras & Motion Sensors"]:::device
 
     %% Automations
-    Automations[Automations & Scripts]:::automation
+    Automations["Automations & Scripts"]:::automation
 
     %% Connections
     MiniPC --> Proxmox
