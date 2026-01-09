@@ -1,3 +1,4 @@
+```mermaid
 %% File: diagrams/system_overview.mmd
 %% Home Assistant Smart Home System Overview
 
